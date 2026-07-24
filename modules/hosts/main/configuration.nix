@@ -6,6 +6,7 @@
       inputs.home-manager.nixosModules.home-manager
 
       self.nixosModules.niri
+      self.nixosModules.virt-manager
     ];
 
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -57,7 +58,7 @@
     users.users."user" = {
       isNormalUser = true;
       description = "user";
-      extraGroups = [ "networkmanager" "video" "wheel" ];
+      extraGroups = [ "libvirtd" "networkmanager" "video" "wheel" ];
     };
 
     home-manager = {
@@ -68,7 +69,7 @@
 
       users."user" = {
         imports = [
-          (self.homeModules.kitty or {})
+          self.homeModules.kitty
         ];
 
         home.stateVersion = "26.05";
