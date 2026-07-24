@@ -5,7 +5,9 @@
 
       inputs.home-manager.nixosModules.home-manager
 
+      self.nixosModules.docker
       self.nixosModules.niri
+      self.nixosModules.thunar
       self.nixosModules.virt-manager
     ];
 
@@ -58,7 +60,7 @@
     users.users."user" = {
       isNormalUser = true;
       description = "user";
-      extraGroups = [ "libvirtd" "networkmanager" "video" "wheel" ];
+      extraGroups = [ "docker" "libvirtd" "networkmanager" "video" "wheel" ];
     };
 
     home-manager = {
