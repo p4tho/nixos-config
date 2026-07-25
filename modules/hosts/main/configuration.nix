@@ -72,6 +72,7 @@
       users."user" = {
         imports = [
           self.homeModules.kitty
+          self.homeModules.remmina
           self.homeModules.zed
         ];
 
