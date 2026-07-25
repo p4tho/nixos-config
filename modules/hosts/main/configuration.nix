@@ -34,6 +34,8 @@
     # Boot
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
+    services.power-profiles-daemon.enable = true;
+    services.upower.enable = true;
 
     # Graphics
     hardware.graphics.enable = true;
@@ -100,6 +102,8 @@
       librewolf
 
       git
+
+      htop
     ];
 
     system.stateVersion = "26.05";
