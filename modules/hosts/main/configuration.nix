@@ -72,6 +72,7 @@
       users."user" = {
         imports = [
           self.homeModules.kitty
+          self.homeModules.zed
         ];
 
         home.stateVersion = "26.05";
@@ -79,7 +80,7 @@
     };
 
     # Audio
-    hardware.pulseaudio.enable = false;
+    services.pulseaudio.enable = false;
     security.rtkit.enable = true;
 
     services.pipewire = {
@@ -98,7 +99,6 @@
       librewolf
 
       git
-      zed-editor
     ];
 
     system.stateVersion = "26.05";
