@@ -19,7 +19,13 @@
           xkb.layout = "us,ua";
         };
 
-        layout.gaps = 5;
+        layout = {
+          gaps = 5;
+
+          default-column-width = {
+            proportion = 1.0;
+          };
+        };
 
         binds = {
           "Super+Space".spawn-sh = "${lib.getExe self'.packages.myNoctalia} ipc call launcher toggle";
