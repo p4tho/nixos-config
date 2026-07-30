@@ -1,7 +1,7 @@
 { self, inputs, ... }: {
-  flake.nixosModules.mainConfiguration = { config, pkgs, lib, ... }: {
+  flake.nixosModules.laptopConfiguration = { config, pkgs, lib, ... }: {
     imports = [
-      self.nixosModules.mainHardware
+      self.nixosModules.laptopHardware
 
       inputs.home-manager.nixosModules.home-manager
 
@@ -37,8 +37,9 @@
     services.power-profiles-daemon.enable = true;
     services.upower.enable = true;
 
-    # Graphics
+    # NVIDIA
     hardware.graphics.enable = true;
+
 
     programs.xwayland.enable = true;
 
