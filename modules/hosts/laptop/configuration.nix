@@ -37,14 +37,32 @@
     services.power-profiles-daemon.enable = true;
     services.upower.enable = true;
 
-    # NVIDIA
+    # Graphics
+    services.xserver.videoDrivers = [ "modesetting" "nvidia" ];
     hardware.graphics.enable = true;
-
+    hardware.nvidia = {
+      modesetting.enable = true;
+      nvidiaSettings = true;
+      open = false;
+      package = config.boot.kernelPackages.nvidiaPackages.stable;
+      powerManagement.enable = false;
+      powerManagement.finegrained = false;
+      prime = {
+        offload = {
+          enable = true;
+          enableOffloadCmd = true;
+        };
+        amdgpuBusId = "PCI:1:0:0";
+        nvidiaBusId = "PCI:6:0:0";
+      };
+    };
+    nix.settings = {
+      substituters = [ "https://cache.nixos-cuda.org" ];
+      trusted-public-keys = [ "cache.nixos-cuda.org:74DUi4Ye579gUqzH4ziL9IyiJBlDpMRn9MBN8oNan9M=" ];
+    };
 
     programs.xwayland.enable = true;
-
     security.polkit.enable = true;
-
     services.xserver.enable = false;
     services.dbus.enable = true;
 
@@ -77,6 +95,12 @@
           self.homeModules.kitty
           self.homeModules.remmina
           self.homeModules.zed
+        ];
+
+        home.packages = with pkgs; [
+          lshw
+          pciutils
+          usbutils
         ];
 
         home.stateVersion = "26.05";
