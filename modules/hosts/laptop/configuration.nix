@@ -98,7 +98,18 @@
         ];
 
         home.packages = with pkgs; [
+          # General
+          brightnessctl
+          brave
+          curl
+          git
+          librewolf
+          tree
+
+          # System Monitoring
+          htop
           lshw
+          lsof
           pciutils
           usbutils
         ];
@@ -118,18 +129,6 @@
       pulse.enable = true;
       wireplumber.enable = true;
     };
-
-    # Packages
-    environment.systemPackages = with pkgs; [
-      brightnessctl
-
-      brave
-      librewolf
-
-      git
-
-      htop
-    ];
 
     system.stateVersion = "26.05";
   };
