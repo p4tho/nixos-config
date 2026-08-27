@@ -94,6 +94,7 @@
         imports = [
           self.homeModules.kitty
           self.homeModules.remmina
+          self.homeModules.vscodium
           self.homeModules.zed
         ];
 
