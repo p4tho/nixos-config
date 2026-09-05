@@ -7,14 +7,9 @@
         enableUpdateCheck = false;
         enableExtensionUpdateCheck = false;
 
-        userSettings = {
-          "workbench.colorTheme" = "Dark High Contrast";
-          "editor.fontSize" = 14;
-          "editor.formatOnSave" = true;
-          "editor.bracketPairColorization.enabled" = true;
-          "nix.enableLanguageServer" = true;
-          "nix.serverPath" = "nixd";
-        };
+        userSettings =
+          (builtins.fromJSON
+            (builtins.readFile ./vscodium.json));
       };
     };
 

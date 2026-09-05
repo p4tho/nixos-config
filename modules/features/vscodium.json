@@ -1,0 +1,11 @@
+{
+  "editor.bracketPairColorization.enabled": true,
+  "editor.fontSize": 14,
+  "editor.formatOnSave": true,
+  "extensions.autoCheckUpdates": false,
+  "nix.enableLanguageServer": true,
+  "nix.serverPath": "nixd",
+  "update.mode": "none",
+  "workbench.colorTheme": "Dark High Contrast",
+  "git.openRepositoryInParentFolders": "always"
+}
