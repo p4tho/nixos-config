@@ -15,6 +15,26 @@
           (lib.getExe self'.packages.myNoctalia)
         ];
 
+      outputs = {
+        "HDMI-A-1" = {
+          position = _: {
+            props = {
+              x = 0;
+              y = 0;
+            };
+          };
+        };
+
+        "DP-3" = {
+          position = _: {
+            props = {
+              x = 0;
+              y = 1080;
+            };
+          };
+        };
+      };
+
         input.keyboard = {
           xkb.layout = "us,ua";
         };
