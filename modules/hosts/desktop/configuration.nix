@@ -106,6 +106,10 @@
           lsof
           pciutils
           usbutils
+
+          # Dev
+          nixd
+          nixfmt
         ];
 
         home.stateVersion = "26.05";
