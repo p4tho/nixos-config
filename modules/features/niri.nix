@@ -17,6 +17,8 @@
 
       outputs = {
         "HDMI-A-1" = {
+          mode = "1920x1080@60";
+
           position = _: {
             props = {
               x = 0;
@@ -26,6 +28,8 @@
         };
 
         "DP-3" = {
+          mode = "1920x1080@164.955";
+
           position = _: {
             props = {
               x = 0;
